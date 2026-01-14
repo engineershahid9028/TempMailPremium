@@ -1,7 +1,7 @@
 from fastapi import FastAPI,Depends
 from sqlalchemy.orm import Session
-from .db import SessionLocal,init_db
-from .models import User,EmailVault
+from app.db import SessionLocal, init_db
+from app.models import User, EmailVault
 from datetime import datetime
 
 app=FastAPI(title="TempMailPremium API")
