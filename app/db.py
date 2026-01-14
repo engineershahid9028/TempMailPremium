@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from app.settings import DATABASE_URL
-from app.models import Base, User, EmailVault, Payment
+from settings import DATABASE_URL
+from models import Base, User, EmailVault, Payment
 
 engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
