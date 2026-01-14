@@ -3,14 +3,15 @@ import re
 from telegram import InlineKeyboardMarkup,InlineKeyboardButton,Update
 from telegram.ext import ApplicationBuilder,CallbackQueryHandler,CommandHandler,ContextTypes
 
-from .settings import BOT_TOKEN,VAULT_TTL_HOURS
-from .db import init_db,SessionLocal,get_or_create_user
-from .models import EmailVault
-from .email_service import generate_email,inbox as inbox_api,read_message
-from .quotas import reset_if_needed,consume_one
-from .referrals import apply_referral
-from .rate_limit import allow
-from .payments import create_stripe_checkout
+from app.settings import BOT_TOKEN, VAULT_TTL_HOURS
+from app.db import init_db, SessionLocal, get_or_create_user
+from app.models import EmailVault
+from app.email_service import generate_email, inbox as inbox_api, read_message
+from app.quotas import reset_if_needed, consume_one
+from app.referrals import apply_referral
+from app.rate_limit import allow
+from app.payments import create_stripe_checkout
+
 
 MENU=InlineKeyboardMarkup([
     [InlineKeyboardButton("📧 Generate Email",callback_data="gen")],
